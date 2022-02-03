@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { SafeAreaView, StatusBar, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
+
+import TelaPadrao from '../../componentes/TelaPadrao';
 import Item from './Item';
 
 const servicos = [
@@ -25,12 +27,11 @@ const servicos = [
 ];
 
 export default function Servicos() {
-  return <SafeAreaView>
-    <StatusBar />
+  return <TelaPadrao>
     <FlatList
       data={servicos}
       renderItem={({item}) => <Item {...item}  />}
       keyExtractor={({id}) => String(id)}
     />
-  </SafeAreaView>
+  </TelaPadrao>
 }
